@@ -1,0 +1,45 @@
+<html>
+<head>
+ <TITLE>Giorni a Natale</TITLE>
+ <script type="text/javascript">
+	function ora()
+	{
+		//rilevazione data odierna
+		oggi = new Date();
+		//sistemazione dta di natale di quest' anno
+		natale = new Date();
+		natale.setDate(25);
+		natale.setMonth(11);
+		natale.setMilliseconds(0);
+		natale.setSeconds(0);
+		natale.setMinutes(0);
+		natale.setHours(0);
+		//Calcola milliseconde tra le due date
+		diff = natale - oggi;
+		//la differenza è in millisecodi, quindi viene trasformata in secondi
+		//poi in minuti, quindi in ore e in giorni
+		//calcolo dei giorni
+		giorni = Math.floor(diff/1000/60/60/24);
+		ore = Math.floor(diff/1000/60/60) - (giorni * 24);
+		minuti = Math.floor(diff/1000/60) - (giorni * 24 * 60) - (ore * 60);
+		secondi = Math.floor(diff/1000) - (giorni * 24 * 60 * 60) - (ore * 60 * 60) - (minuti * 60);
+		sec = (secondi==1)?" Secondo ":" Secondi ";
+		min = (minuti==1)?" Minuto ":" Minuti ";
+		hr = (ore==1)?" Ora, ":" Ore, ";
+		dy = (giorni==1)?" Giorno":" Giorni, ";
+		document.modulo.testo.value = "Mancano " + giorni + dy + ore + hr + minuti + min + secondi + sec + " A Natale."; 
+	}
+	
+	function parti()
+	{
+		n = setInterval("ora()", 100);
+	}
+ </script>
+</head>
+<body onload = "parti();" BGCOLOR = "blanchedalmond">
+<H3>Quanto manca a Natale?</H3><HR>
+<FORM NAME="modulo">
+Countdown <INPUT TYPE="text" NAME = "testo" SIZE="60">
+</FORM>
+</body>
+</html>

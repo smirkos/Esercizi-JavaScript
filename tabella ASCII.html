@@ -1,0 +1,37 @@
+<HTML>
+	<HEAD>
+		<TITLE>Tabella ASCII</TITLE>
+	</HEAD>
+	<BODY bgColor = "#71D0FF">
+	<h3>Iterazione post condizionata</h3><HR>
+	<FONT size = "1">
+	<script type = "text/javascript">
+	var num=32; //primo carattere ascii visibile
+	messaggio = "<P ALIGN='center'><TABLE BORDER=1><CAPTION><B>Tabella dei caratteri Ascii</B></CAPTION>";
+	messaggio += "<TR>";
+	//Ciclo per stampare i titoli delle 8 colonne
+	var j = 1;
+	do
+	{
+		messaggio += "<TD><b>&nbspValore&nbsp</b> <TD> <b>&nbspCarattere&nbsp</b> ";
+		j++;
+	}while(j <= 8);
+	//Ciclo per 28 righe
+	var i=1;
+	do
+	{
+		j = num;
+		messaggio += "<TR>";
+		do
+		{
+			messaggio += "<TD><P ALIGN='right'>" + j + "<TD><B>" + "<P ALIGN='center'>&#" + j; //Stampa del carattere ascii
+			j++;
+		}while(j < num+8);
+		num += 8;
+		i++;
+	}while(i <= 28);
+	messaggio += "</TABLE>";
+	document.write(messaggio);
+	</script>
+	</BODY>
+</HTML>

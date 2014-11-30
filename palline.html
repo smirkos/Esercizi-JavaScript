@@ -1,0 +1,33 @@
+<html>
+<head>
+ <TITLE>Esercizio 122</TITLE>
+ <script type="text/javascript">
+	//contatore palline presenti
+	var palle=2;
+	//velocità di animazione (numero grande velocità alta)
+	var speed=20;
+	//4 array globali che contengono la posizione dell'elemento (x,y) e la direzione del moto (x,y). Usati gli array per le direzioni di entrambe le palline
+	var xpos = new Array();
+	var ypos = new Array();
+	var xdir = new Array();
+	var ydir = new Array();
+	//la funzione che calcola la nuova posizione della pallina tenendo presente la direzione e la posizione vecchia riceve il parametro nume che è l'indice posizionale della 	   
+	//collections di immagini images[] ed indica la pallina da spostare
+	function calcolaPosizione(num)
+	{
+		//controllo direzione orrizzontale 
+		//se xdir è false significa che  va a destra
+		if(!xdir[num])
+		{
+			//cambio direzione
+			xdir[num]=true;
+		}
+	}
+ </script>
+</head>
+<body onload = "vai();" BACKGROUND = "nuvola.jpg" scroll="no">
+<H3>Animazione.</H3><HR>
+<IMG src="palla1.gif" style = "position:absolute;top:10;left:200">
+<IMG src="palla2.gif" style="position:absolute;top:100;left:150">
+</body>
+</html>

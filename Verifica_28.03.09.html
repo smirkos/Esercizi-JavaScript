@@ -1,0 +1,69 @@
+<!--  Mirko Squadrani   5AI     28/03/2009 -->
+<html>
+<head>
+ <TITLE>Verifica 28/03/2009</TITLE>
+ <script type="text/javascript">
+	function Controlla(email)
+	{
+		if(email)
+	}
+	function Controlla(email)
+	{
+		if(email)
+	}
+	
+	function Send(valutazione)
+	{
+		switch (valutazione)
+		{
+			case 1:
+				document.write("<a href=mailto:nome@domi.nio&body=Non gli piace></a>");
+				break;
+			case 2:
+				document.write("<a href=mailto:nome@domi.nio&body=E' una perdita di tempo></a>");
+				break;
+			case 3:
+				document.write("<a href=mailto:nome@domi.nio&body=Peggior sito della rete></a>");
+				break;
+		}
+	}
+ </script>
+</head>
+<body>
+<script type="text/javascript">
+	var data = new Date();
+	var H,M, d,m,a;
+	d = data.getDate();
+	m = data.getMonth();
+	a = data.getFullYear();
+	H = data.getHours();
+	M = data.getMinutes();
+	document.write("Questo è JavaScript!" + "<BR>");
+	document.write("L'ora attuale è: " + H + ":" + M + "<BR>");
+	document.write("La data di oggi è: " + d + "/" + m + "/" + a + "<BR>");
+</script>
+
+<H3>Ti piace questa pagina?</H3>
+<p>
+<input type="radio" name="val" value="1">No per niente. <BR>
+<input type="radio" name="val" value="2">E' una perdita di tempo. <BR>
+<input type="radio" name="val" value="3">E' il peggior sito della rete. <BR>
+<input type="submit" value="Send" name="btnSend" onClick="Send(val)"> <BR>
+</p>
+
+<FORM method="get" onSubmit="return ">
+<p>Inserisci il tuo nome:<BR>
+<input type="text" name="nome"> 
+<input type="button" name="btnCont" value="Controlla" onClick="Controlla()"> <BR>
+</p>
+</FORM>
+
+<FORM method="get" onSubmit="return ">
+<p>
+Inserisci il tuo indirizzo di e-mail:<BR>
+<input type="text" name="email"> 
+<input type="button" name="btnCont" value="Controlla" onClick="Controlla(email)"> <BR>
+</p>
+</FORM>
+</body>
+</html>

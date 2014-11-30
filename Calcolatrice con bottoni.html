@@ -1,0 +1,59 @@
+<html>
+<head>
+ <script language="javascript">
+	function scrivi(numero)
+	{
+		with(document.calc)
+		{
+			dis.value += numero;
+		}
+	}
+	function calcola(operatore, num1, num2)
+	{
+		var ris = 0;
+		switch(operatore)
+		{
+			case "+":
+			ris = num1 + num2;
+			break;
+			
+			case "-":
+			ris = num1 - num2;
+			break;
+			
+			case "*":
+			ris = num1 * num2;
+			break;
+		}
+		return ris;
+	}
+ </script>
+</head>
+<body>
+<script type="text/javascript">
+var oper = ["+", "-", "*"];
+document.write("<FORM name='calc'><INPUT type='text' name='dis' size='24' style='text-align:right'>");
+document.write("<TABLE border=0 bgcolor=blanchedalmond><TR>");
+//ciclo che visualizza i bottoni
+//assegna a ciascuno il nome b0, b1, ecc.......
+var op = 0, ris = 0;
+for(i = 7; i > 0 ;i -= 3)
+{
+	//ciclo esterno per le prime 3 righe con 'i' che va da 7 a 1
+	document.write("<TR>");
+	for(j = i; j < i+3 ;j++)
+	{
+		//ciclo interno con 'j' che parte da 'i' per 4 colonne
+		document.write("<TD><INPUT type=button value='   " + j + "' name=b" + j + " onclick = scrivi(" + j + ")>");
+	}
+	document.write("<TD>" + "<INPUT type=button value='  " + oper[op] + "  ' name=b" + oper[op] + " onclick='" + ris + " = calcola(" + oper[op] + ", dis.value, );'>");
+	op++;
+}
+document.write("<TR><TD><INPUT type=button value='   0   ' name='b9' onclick='scrivi(0)'>");
+document.write("<TD><INPUT type=button value='   .   ' name='b.'>");
+document.write("<TD><INPUT type=button value='   =   ' name='b=' onclick='" + alert("Il risultato è: " + ris) + ";'>");
+document.write("<TD><INPUT type=button value='   /   ' name='b/'>");
+document.write("</TABLE></FORM>");
+</script>
+</body>
+</html>

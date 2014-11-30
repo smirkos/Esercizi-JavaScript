@@ -1,0 +1,59 @@
+<html>
+<head>
+ <script language="javascript">
+	function somma(form)
+	{
+		if(form.num1.value == "")
+		{
+			alert("inserire il numero 1!");
+			return false;
+		}
+		if(form.num2.value == "")
+		{
+			alert("inserire il numero 2!");
+			return false;
+		}
+		if(form.segno.value == "")
+		{
+			alert("inserire il segno");
+			return false:
+		}
+		segno = form.segno.value;
+		if(segno == '+')
+			ris = parseInt(form.num1.value) + parseInt(form.num2.value);
+		if(segno == '-')					
+			ris = parseInt(form.num1.value) - parseInt(form.num2.value);
+		if(segno == '*')
+			ris = parseInt(form.num1.value) * parseInt(form.num2.value);
+		if(segno == '/')
+			ris = parseInt(form.num1.value) / parseInt(form.num2.value);
+		
+		alert("Risultato: " + ris);
+	}
+ </script>
+</head>
+<body>
+<form onsubmit = "return somma(this);">
+	<script type="text/javascript">
+		//<!--
+		var data = new Date();
+		var Hh, Mm, Ss, Mm;
+		var d, g, m, a;
+		d = data.getDate();
+		m = data.getMonth();
+		a = data.getFullYear();
+		Hh = data.getHours() + ":";
+		Mm = data.getMinutes() + ":";
+		Ss = data.getSeconds() + ":";
+		mm = data.getMilliseconds() + ":";
+		document.write("Sono le ore " + Hh + Mm + Ss + mm);
+		document.write("<br>Del giorno " + d + "/" + m + "/" + a);
+		//-->
+	</script>
+<br> <br> <input type="text" size=10 name="num1">
+<input type="text" size=1 name="segno">
+<input type="text" size=10 name="num2">
+<p> <input type="submit" style="height: 25px; with: 212px" value="calcola"></p>
+</form>
+</body>
+</html>

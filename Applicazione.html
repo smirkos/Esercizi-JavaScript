@@ -1,0 +1,52 @@
+<html>
+<head>
+ <TITLE>Applicazione 13</TITLE>
+ <H3>Scomposizione di un numero in fattori primi</H3><HR>
+ <script language="javascript">
+	function scomponi(n)
+	{
+		n = Math.abs(Math.floor(n));
+		risultato = n + " = ";
+		for(pr = 2; pr <= n; pr = genera_primo_succ(pr))
+		{
+			esp = 0;
+			if(n%pr == 0)  //se pr è divisore di n, allora......
+			{
+				esp++; //incrementa esponente
+				n /= pr; //divide il numero dato per il fattore pr
+				while(n%pr == 0) //controlla se pr è ancora divis. di n
+				{
+					esp++; //incrementa di nuovo l'esponente
+					n /= pr; //ridivide il numero dato per il fattore pr
+				}
+				risultato = risultato + " " + pr + "<SUP>" + esp + "</SUP>";
+			}
+		}
+		return risultato;
+	}
+	
+	function genera_primo_succ(x)
+	{
+		if(x == 2) 
+			return x = 3;
+		else
+		{
+			x+=2;  //incrementa numero e controlla se ha divisori
+			for(i=3; (i-1)<=(x/i); i+=2)  //Ricerca divisori
+			{
+				if(x%i == 0)
+					x += 2; i = 1;  //se trova un divisore, prova un altro numero
+			}
+			return x;  //restituisce numero primo successivo
+		}
+	}
+ </script>
+</head>
+<body>
+<script type="text/javascript">
+var num = 0;
+num = eval(prompt("numero da scomporre "));
+document.write("<B>" + scomponi(num));
+</script>
+</body>
+</html>

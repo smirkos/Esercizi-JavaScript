@@ -1,0 +1,23 @@
+<HTML>
+	<HEAD>
+		<TITLE>Tavola Pitagorica</TITLE>
+	</HEAD>
+	<BODY bgColor = "#71D0FF">	
+	<h3>Iterazione tavola pitagorica</h3><HR>
+	<FONT size = "1">	
+	<script type = "text/javascript">
+	messaggio = "<P ALIGN='center'><TABLE BORDER=1><CAPTION><B>Tavola pitagorica</B></CAPTION>";
+	messaggio += "<TR>";
+		for(var c = 1; c < 12; c++){
+			messaggio += "<TD><P ALIGN='center'><b>"+ c +"</b>";
+			for(var r = 2; r < 12; r++){
+				messaggio+= "<TD><P ALIGN='right'>"+(c*r);
+			}
+			messaggio += "<TR>";
+		}
+		messaggio += "</TABLE>";
+		document.write(messaggio);
+	</Script>
+	
+	</BODY>
+</HTML>

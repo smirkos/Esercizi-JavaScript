@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Creare un cookie</title>
+<script language="javascript" src="Cookies.js"></script>
+<script language="javascript">
+	function Cookie_Set()
+	{
+		SetCookie(document.CookieForm.CookieName.value, 
+			document.CookieForm.CookieVal.value);
+		alert("Done");
+	}
+	
+	function Cookie_Get()
+	{
+		alert(GetCookie(document.CookieForm.CookieName.value));
+	}
+</script>
+</head>
+<body bgcolor="blanchedalmond">
+<form name="CookieForm" action="path-to-your-cgi" method="post">
+<p>Cookie name
+	<input type="text" name="CookieName"><br>Cookie value
+	<input type="text" name="CookieVal"><br>
+	<input type="button" value="  Set Cookie  " onClick="Cookie_Set()">
+	&nbsp;
+	<input type="button" value="  Get Cookie  " onClick="Cookie_Get()">
+</p>
+</form>
+</body>
+</html>
